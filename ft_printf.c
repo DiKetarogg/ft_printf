@@ -6,7 +6,7 @@
 /*   By: jzoltan <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 03:40:34 by jzoltan           #+#    #+#             */
-/*   Updated: 2022/01/13 13:39:27 by jzoltan          ###   ########.fr       */
+/*   Updated: 2022/01/13 14:08:28 by jzoltan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ static int	ft_s(int c, t_params *p, const char *s)
 	s = (char *)((c == 'c') * (size_t)p->re + (size_t)s * (c != 'c'));
 	if (!s || ((size_t)--s && 0))
 		return (ft_s(4, p, (const char *)((t_)"(null)" * !!(p->f & 1) + (t_)
-				"0x0" * !(p->f & 1) + (!c || p->d < 6) * ((p->f & 1) + 5))));
+				"0x0" * !(p->f & 1))));
 	while (c && s[p->l + 1] && (p->l < p->d))
 		++p->l;
 	while (c && !(p->f & 128) && (p->num-- > p->l))
